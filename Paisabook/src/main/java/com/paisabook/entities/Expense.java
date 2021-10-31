@@ -14,5 +14,6 @@ public class Expense {
 	
 	@Id
 	private int expenseId;
-
+	private String expenseTitle;
+	private double expenseAmount;
 }

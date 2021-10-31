@@ -10,5 +10,5 @@ import com.paisabook.entities.Transaction;
 public interface TransactionDao extends JpaRepository<Transaction, Integer> {
 //	List<Transaction> findAllByTransactionTimeDateLessThanEqualAndEndDateGreaterThanEqual(Date transactionTimeDate);
 
-	List<Transaction> findAllByTransactionTimeDateBetween  (Date startMonth,Date endMonth);
+	List<Transaction> findAllByTransactionTimeDateBetween(Date startMonth,Date endMonth);
 }
