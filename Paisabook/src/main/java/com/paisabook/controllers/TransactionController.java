@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.paisabook.entities.Transaction;
+import com.paisabook.entities.User;
 import com.paisabook.model.Response;
+import com.paisabook.model.TransactionDto;
+import com.paisabook.model.UserDto;
 import com.paisabook.services.TransactionService;
 
 @CrossOrigin
@@ -26,6 +29,13 @@ public class TransactionController {
 	@Autowired
 	private TransactionService transactionservice;
 	
+	@PostMapping("/addTransaction")
+	public ResponseEntity<?> addTransaction(TransactionDto dto){
+		Transaction transaction = TransactionDto.toEntity(dto);
+		transaction = transactionservice.saveTransaction(transaction);
+		TransactionDto transactiondto = TransactionDto.fromEntity(transaction);
+		return Response.success(transaction);
+	}
 	
 	@PostMapping("/getAllTransactions")
 	public List<Transaction> findAllTransaction(){

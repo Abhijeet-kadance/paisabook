@@ -13,4 +13,5 @@ public interface TransactionService {
 //	List<Transaction> findByMonth(Date startDate, Date endDate);
 //	List<Transaction> findByMonth(Date transactionTimeDate);
 	List<Transaction> findByMonth(Date startMonth, Date endMonth);
+	List<Transaction> getAllTransactionsByUserId(int id);
 }

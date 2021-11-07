@@ -43,4 +43,10 @@ public class TransactionServiceImpl implements TransactionService{
 		return transactions;
 	}
 
+	@Override
+	public List<Transaction> getAllTransactionsByUserId(int id) {
+		List<Transaction> alltransactionsByUserId = transactionDao.findByUserUserId(id).orElse(null);
+		return alltransactionsByUserId ;
+	}
+
 }
